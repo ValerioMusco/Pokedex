@@ -36,19 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function previous() {
         if (currentPage > 1) {
             currentPage--;
-            const offset = (currentPage - 1) * 20;
-            const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`;
-
-            RequestHttp(url)
-                .then((data) => {
-                    pokemons = data;
-                    pokeList.innerHTML = ''; 
-                    fillPokeList(data);
-                })
-                .catch((error) => {
-                    console.error('Erreur lors du chargement de la page précédente :', error);
-                });
         }
+        else{
+            currentPage = 65;
+        }
+        const offset = (currentPage - 1) * 20;
+        const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`;
+
+        RequestHttp(url)
+            .then((data) => {
+                pokemons = data;
+                pokeList.innerHTML = ''; 
+                fillPokeList(data);
+            })
+            .catch((error) => {
+                console.error('Erreur lors du chargement de la page précédente :', error);
+            });
     }
 
     function RequestHttp(url) {
