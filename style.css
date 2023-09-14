@@ -1,0 +1,92 @@
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+*,*::after,*::before{
+
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(209, 208, 208);
+}
+
+.pokedex{
+
+    position:relative;
+    background-image: url("/Images/pokedex.png");
+    background-size: cover;
+    width: 800px;
+    height: 600px;
+    border-radius: 5px;
+}
+
+.pokemonSprite{
+
+    position: absolute;
+    width: 340px;
+    height: 342px;
+    background-color: white;
+    left: 26px;
+    top: 150px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemonLists{
+
+    position: absolute;
+    width: 300px;
+    height: 380px;
+    background-color: white;
+    left: 464px;
+    top: 156px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li{
+
+    list-style: none;
+}
+
+.list{
+
+    margin-left: 20px;
+    padding-top: 3%;
+}
+
+.arrow{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15%;
+    margin-right: 15px;
+}
+
+.pokeName{
+
+    font-size: 50px;
+}
+
+.pokeSprite{
+
+    width: 60%;
+    animation: bounce 1s infinite alternate;
+}
